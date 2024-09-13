@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Messages & Memories</title>
+  <title>Love Calculator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,15 +16,23 @@
     <a href="puzzle.html">Puzzle Game</a>
   </div>
 
-  <!-- Main Content for Gallery -->
-  <div class="content gallery-content">
-    <h2>Messages & Memories</h2>
-    <div class="gallery">
-      <div class="photo">
-        <img src="images/Daria1.jpg" alt="Memory 1">
-        <p>Calculator page</p>
+  <!-- Main Content -->
+  <div class="content calculator-content">
+    <h2>Love Calculator</h2>
+    <form id="loveCalculatorForm">
+      <div class="form-group">
+        <label for="name1">Your Name:</label>
+        <input type="text" id="name1" name="name1" required>
       </div>
-      <!-- Add more photos as needed -->
+      <div class="form-group">
+        <label for="name2">Partner's Name:</label>
+        <input type="text" id="name2" name="name2" required>
+      </div>
+      <button type="submit">Calculate Love Score</button>
+    </form>
+    <div id="result" class="result hidden">
+      <h3>Your Love Score:</h3>
+      <p id="score">0%</p>
     </div>
   </div>
 
