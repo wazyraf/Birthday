@@ -4,14 +4,14 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    background-color: #1b0101; /* Dark cherry background */
+    background-color: #2e0202; /* Dark cherry background */
     color: white; /* Light text for contrast with dark background */
   }
   
   /* Sidebar styling */
   .sidebar {
     width: 200px;
-    background-color: #8a1616; /* Brighter red sidebar */
+    background-color: #7a1111; /* Brighter red sidebar */
     height: 100vh;
     position: fixed;
     top: 0;
@@ -119,29 +119,52 @@ body {
   }
   
   /* Gallery Page styling (if needed for future sections) */
-  .gallery-content h2 {
-    color: #e9c46a; /* Change the color for section headings */
+  .gallery-content {
+    margin-left: 200px;
+    padding: 20px;
   }
   
   .gallery {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
   }
   
   .photo {
-    width: 200px;
-    text-align: center;
+    border: 3px solid white;
+    padding: 10px;
+    border-radius: 10px;
   }
   
   .photo img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
   
-  .photo p {
-    margin-top: 10px;
-    color: #264653;
+  /* Center the last image in the last row */
+  .full-row {
+    grid-column: span 5;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .full-row img {
+    width: 50%; /* Make the last photo smaller and centered */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1000px) {
+    .gallery {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller screens */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for very small screens */
+    }
   }
   
   /* Hover animation for images */
