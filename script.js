@@ -7,6 +7,7 @@ function initializeAudio() {
   const musicPlaying = localStorage.getItem('musicPlaying') === 'true';
   const savedTime = localStorage.getItem('audioCurrentTime') || 0;
 
+  // Dacă muzica nu a fost încă pornită, începe redarea de pe poziția salvată
   if (musicPlaying) {
     audio.currentTime = savedTime;
     audio.play();
@@ -32,7 +33,19 @@ function toggleMusic() {
 }
 
 // Event listener pentru inițializarea muzicii la încărcarea paginii
-window.addEventListener('load', initializeAudio);
+window.addEventListener('load', function() {
+  // Verifică dacă pagina este homepage și setează muzica
+  if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
+    // În pagina principală, pornește muzica de la început
+    audio.currentTime = 0;
+    audio.play();
+    localStorage.setItem('musicPlaying', 'true');
+    toggleButton.textContent = 'Pause Music';
+  } else {
+    // Pe alte pagini, continuă redarea din poziția salvată
+    initializeAudio();
+  }
+});
 
 // Event listener pentru salvarea stării muzicii la părăsirea paginii
 window.addEventListener('beforeunload', function() {
@@ -41,7 +54,7 @@ window.addEventListener('beforeunload', function() {
 });
 
 // Event listener pentru formularul de calculator de dragoste
-document.getElementById('loveCalculatorForm').addEventListener('submit', function(event) {
+document.getElementById('loveCalculatorForm')?.addEventListener('submit', function(event) {
   event.preventDefault(); // Previi trimiterea formularului
 
   // Afișează rezultatul
@@ -51,4 +64,4 @@ document.getElementById('loveCalculatorForm').addEventListener('submit', functio
 });
 
 // Event listener pentru butonul de control al muzicii
-toggleButton.addEventListener('click', toggleMusic);
+toggleButton?.addEventListener('click', toggleMusic);
