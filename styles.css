@@ -177,20 +177,28 @@ body {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   }
   
- /* Love Calculator Page Styling */
+/* Love Calculator Page Styling */
 .calculator-content {
     margin-left: 200px;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form and other content */
   }
   
   .form-group {
     margin-bottom: 15px;
+    width: 100%;
+    max-width: 400px; /* Ensure the form does not exceed the width */
+    text-align: center; /* Center the text inside the form-group */
   }
   
   label {
+    display: block;
     font-size: 1.2em;
     color: white;
+    margin-bottom: 5px; /* Space between label and input */
   }
   
   input[type="text"] {
@@ -199,7 +207,7 @@ body {
     border-radius: 5px;
     border: 1px solid #ccc;
     width: 100%;
-    max-width: 400px;
+    box-sizing: border-box; /* Ensures padding is included in width */
   }
   
   button {
@@ -211,6 +219,7 @@ body {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 20px; /* Space above the button */
   }
   
   button:hover {
@@ -235,7 +244,7 @@ body {
     color: white;
     margin-top: 10px;
   }
-  
+
   /* Gifts Page Styling */
 .gifts-content {
     margin-left: 200px;
