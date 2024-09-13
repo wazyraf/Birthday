@@ -84,8 +84,23 @@ body {
     bottom: 0;
     border-radius: 50%;
     animation: floatUp 6s infinite ease-in-out;
-    z-index: 10; /*makes sure ballons are on top*/
+    z-index: 10;
+    /* Add random animation delay to make the flight pattern more varied */
+    animation-delay: calc(0.5s * var(--random-delay));
   }
+
+  /* Balloon string */
+.balloon::after {
+    content: '';
+    width: 2px;
+    height: 50px;
+    background-color: #8d99ae; /* String color */
+    position: absolute;
+    top: 80px; /* Position the string below the balloon */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
   
   /* Balloon animation */
   @keyframes floatUp {
