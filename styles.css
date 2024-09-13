@@ -4,14 +4,14 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    background-color: #2b0000; /* Dark cherry background */
+    background-color: #1b0101; /* Dark cherry background */
     color: white; /* Light text for contrast with dark background */
   }
   
   /* Sidebar styling */
   .sidebar {
     width: 200px;
-    background-color: #aa2424; /* Brighter red sidebar */
+    background-color: #8a1616; /* Brighter red sidebar */
     height: 100vh;
     position: fixed;
     top: 0;
@@ -26,10 +26,16 @@ body {
     text-decoration: none;
     font-size: 18px;
     transition: background-color 0.3s;
+    border-bottom: 1px solid white; /* Adds thin white border between selections */
   }
   
+  .sidebar a:first-child {
+    border-top: 1px solid white; /* Adds a top border to the first item for consistency */
+  }
+  
+
   .sidebar a:hover {
-    background-color: #e76f51;
+    background-color: #db6946;
   }
   
   /* Main content */
@@ -44,7 +50,7 @@ body {
   }
   
   p {
-    color: #2a9d8f;
+    color: #b0b3b2;
   }
   
   /* Home Page Centering */
