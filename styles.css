@@ -177,7 +177,7 @@ body {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   }
   
-  /* Love Calculator Page Styling */
+ /* Love Calculator Page Styling */
 .calculator-content {
     margin-left: 200px;
     padding: 20px;
@@ -228,4 +228,10 @@ body {
   #score {
     font-size: 2em;
     color: #e76f51;
+  }
+  
+  #message {
+    font-size: 1.2em;
+    color: white;
+    margin-top: 10px;
   }
