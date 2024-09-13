@@ -1,15 +1,17 @@
 /* Basic page styling */
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #2b0000; /* Dark cherry background */
+  color: white; /* Light text to contrast with dark background */
   }
   
   /* Sidebar styling */
   .sidebar {
     width: 200px;
-    background-color: #f4a261;
+    background-color: #aa2424; /* Bright red sidebar */
     height: 100vh;
     position: fixed;
     top: 0;
@@ -37,14 +39,44 @@ body {
   }
   
   h1, h2 {
-    color: #264653;
+    color: white;
   }
   
   p {
     color: #2a9d8f;
   }
   
+  /* Home Page Centering */
+.home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .home-content h1 {
+    font-size: 3em;
+    font-weight: bold;
+  }
+  
+  .home-content p {
+    font-size: 1.5em;
+    margin-top: 10px;
+  }
+  
+  .center-photo {
+    margin-top: 20px;
+    width: 300px;
+    border-radius: 10px;
+  }
+
   /* Messages & Memories Gallery */
+  .gallery-content h2 {
+    color: #e9c46a; /* You can change the color for section headings */
+  }
+
   .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -72,7 +104,7 @@ body {
   }
   
   .photo img:hover {
-    transform: scale(1.05);
+    transform: scale(1.15);
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   }
   /* Balloon styling */
