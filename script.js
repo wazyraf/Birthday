@@ -2,12 +2,25 @@
 const audio = document.getElementById('backgroundMusic');
 const toggleButton = document.getElementById('toggleMusicButton');
 
+// Salvează poziția de redare a muzicii la părăsirea paginii
+window.addEventListener('beforeunload', function() {
+  if (!audio.paused) {
+    localStorage.setItem('musicPlaying', 'true');
+    localStorage.setItem('audioCurrentTime', audio.currentTime);
+  } else {
+    localStorage.setItem('musicPlaying', 'false');
+  }
+});
+
 // Pornește muzica automat la încărcarea paginii în funcție de starea salvată în localStorage
 window.addEventListener('load', function() {
   if (localStorage.getItem('musicPlaying') === 'true') {
+    audio.currentTime = localStorage.getItem('audioCurrentTime') || 0; // Restore position
     audio.play(); // Pornește muzica
+    toggleButton.textContent = 'Pause Music'; // Update button text
   } else {
     audio.pause(); // Oprește muzica
+    toggleButton.textContent = 'Play Music'; // Update button text
   }
 });
 
@@ -16,15 +29,13 @@ function toggleMusic() {
   if (audio.paused) {
     audio.play(); // Pornește muzica
     localStorage.setItem('musicPlaying', 'true'); // Salvează starea muzicii ca fiind pornită
+    toggleButton.textContent = 'Pause Music'; // Update button text
   } else {
     audio.pause(); // Oprește muzica
     localStorage.setItem('musicPlaying', 'false'); // Salvează starea muzicii ca fiind oprită
+    toggleButton.textContent = 'Play Music'; // Update button text
   }
-}
-
-// Exemplu de utilizare a funcției pentru a schimba starea muzicii
-if (toggleButton) {
-  toggleButton.addEventListener('click', toggleMusic);
+  localStorage.setItem('audioCurrentTime', audio.currentTime); // Salvează poziția curentă
 }
 
 // Funcția pentru calculatorul de dragoste
