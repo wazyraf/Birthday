@@ -285,3 +285,21 @@ body {
   .message-box p {
     margin-bottom: 0;
   }
+  
+  #music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #e76f51;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #music-control:hover {
+    background-color: #e94e77;
+  }
