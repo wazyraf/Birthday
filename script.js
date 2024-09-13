@@ -1,21 +1,17 @@
-// Obține referința la elementul audio și butonul de control
+// Obține referința la elementul audio
 const audio = document.getElementById('backgroundMusic');
-const toggleButton = document.getElementById('toggleMusicButton');
 
 // Pornește muzica automat la încărcarea paginii
 window.addEventListener('load', function() {
   audio.play(); // Pornește muzica
-  toggleButton.textContent = 'Pause Music'; // Actualizează textul butonului
 });
 
 // Oprește muzica dacă utilizatorul vrea să o oprească
 function toggleMusic() {
   if (audio.paused) {
     audio.play(); // Pornește muzica
-    toggleButton.textContent = 'Pause Music'; // Actualizează textul butonului
   } else {
     audio.pause(); // Oprește muzica
-    toggleButton.textContent = 'Play Music'; // Actualizează textul butonului
   }
 }
 
