@@ -235,3 +235,37 @@ body {
     color: white;
     margin-top: 10px;
   }
+  
+  /* Gifts Page Styling */
+.gifts-content {
+    margin-left: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height to ensure split works well */
+    box-sizing: border-box;
+  }
+  
+  .message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between the two message boxes */
+    height: 100%; /* Make sure it takes up full height */
+  }
+  
+  .message-box {
+    border: 2px solid white; /* Border color */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #7a1111; /* Background color of message box */
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visual effect */
+  }
+  
+  .message-box h3 {
+    margin-top: 0;
+  }
+  
+  .message-box p {
+    margin-bottom: 0;
+  }
